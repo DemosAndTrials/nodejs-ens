@@ -24,26 +24,25 @@ routes.get('/about', function(req, res) {
 
 /**
 * Callback url to receive event notifications.
+* https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/ens-retries-suspensions.htm
  */
-routes.post('/ens/callback', function(req, res) {
+routes.post('/ens/callback1', function(req, res) {
     console.log("*** callback: ", req.body);
+    // TODO logic here
 	return res.status(200).json(req.body);
 });
 
-/**
-* Registers a new callback to receive event notifications.
- */
-routes.post('/ens/register', function(req, res) {
-  console.log("*** register: ", req.body);
+routes.post('/ens/callback2', function(req, res) {
+  console.log("*** callback: ", req.body);
+  // TODO logic here
 return res.status(200).json(req.body);
 });
 
-/**
-* Verifies a callback so that it can receive notifications.
- */
-routes.post('/ens/verify', function(req, res) {
-  console.log("*** verify: ", req.body);
+routes.post('/ens/callback3', function(req, res) {
+  console.log("*** callback: ", req.body);
+  // TODO logic here
 return res.status(200).json(req.body);
 });
+
 
 export default routes;
